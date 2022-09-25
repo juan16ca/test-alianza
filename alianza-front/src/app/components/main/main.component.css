@@ -1,0 +1,110 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+}
+
+li a {
+    display: flex;
+    color: rgb(68, 66, 66);
+    padding: 8px 1px 16px 45px;
+    text-decoration: none;
+    font-family: 'Lucida Sans';
+}
+
+li a:hover {
+    background-color: #2f7ba1;
+    color: white;
+}
+
+h3 {
+    color: #2f7ba1;
+    font-family: 'Lucida Sans';
+    padding: 4px 16px;
+}
+
+h4 {
+    color: #2f7ba1;
+    font-family: 'Lucida Sans';
+}
+
+box-icon {
+    margin: 3px;
+}
+
+img {
+    size: 10px;
+}
+
+.container {
+    display: flex;
+}
+
+.content {
+    flex-grow: 3;
+    margin-left: 10px;
+}
+
+table,
+th,
+tr,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 8px;
+    font-family: 'Lucida Sans';
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        display: block;
+        
+    }
+}
+
+.button {
+    background-color: #2f7ba1;
+    color: white;
+    padding: 10px;
+    border-radius: 7px;
+    border-style: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.buttons a {
+    background-color: #2f7ba1;
+    color: white;
+    padding: 10px;
+    border-radius: 7px;
+    border-style: none;
+    cursor: pointer;
+    margin-right: 10px;
+    text-decoration: none;
+    font-family: 'Lucida Sans';
+}
+
+.buttons {
+    margin-top: 80px;
+    margin-bottom: 20px;
+    flex-direction: row;
+}
+
+.search {
+    display: flex;
+}
+
+#searchButton {
+    cursor: pointer;
+    margin-left: 0;
+}
+
+input {
+    width: 100px;
+
+}
+
+#advancedSearch {
+    margin-left: 30px;
+}

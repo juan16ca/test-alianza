@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="sidebar">
+        <img src="../../../assets/logo.png" alt="log">
+        <ul>
+            <h3>
+                <box-icon name='user' color="#0070d1"></box-icon>Clients
+            </h3>
+            <li><a href="#home">Clients</a></li>
+            <li><a href="#home">Client look history</a></li>
+            <li><a href="#home">Emergency PIN configuration</a></li>
+            <li><a href="#home">Emergency PIN history</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+
+        <div class="buttons">
+            <a href="#openModal" id="newClient">
+                <box-icon name='plus-medical' size="xs" color="white"></box-icon>New
+            </a>
+            <a (click)="saveCsv()" type="button">
+                <box-icon name='export' size="xs" color="white"></box-icon>Export
+            </a>
+        </div>
+
+        <div class="search">
+
+            <form [formGroup]="searchForm">
+                <div class="form-row">
+                    <input type="text" placeholder="Enter shared key" formControlName="sharedKey"
+                        [(ngModel)]="sharedKey">
+                    <button id="searchButton" type="button">Search</button>
+                    <button id="advancedSearch" class="button">Advanced Search</button>
+                </div>
+            </form>
+        </div>
+
+        <h4>Clients</h4>
+
+        <table>
+            <tr>
+                <th>Shared key</th>
+                <th>Business ID</th>
+                <th>E-mail</th>
+                <th>Phone</th>
+                <th>Data Added</th>
+                <th>
+                    <box-icon name='edit' color="blue"></box-icon>
+                </th>
+            </tr>
+            <tr *ngFor="let user of users | searchUserSharedKey: sharedKey">
+                <td>{{user.sharedKey}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.mail}}</td>
+                <td>{{user.phone}}</td>
+                <td>{{user.dateSave}}</td>
+                <td>
+                    <box-icon name='pencil' type='solid'></box-icon>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <app-modal (newItemEvent)="load()"></app-modal>
+</div>
